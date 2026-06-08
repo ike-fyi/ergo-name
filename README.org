@@ -26,9 +26,6 @@ The layout relies strictly on the primary keys of a standard keyboard layout, re
 | ~--~      | Conceptual Break        | Medium-distance    | Acts like a comma/colon structural checkpoint   |
 | ~---~     | Deeper Conceptual Break | Long-distance      | Appends a trailing sub-thought or variant       |
 
-** Capitalization
-
-*ergo-case* was designed sepcifically to avoid the need for the shift key. It does not at all consider or banish the use of capitalization. Standard ergo-case is all lower case, but you can also choose to use capital letters freely without breaking my personal blessing. You will be judged by the auther of ergo-case (me) though, despite that they have no way to be omnipresent and knowledgable in your ways, and despite the fact that they (I) will definitely do it too occasionally. 
 
 ** Basic ~ergo-case~ examples
 *** File Names (Primary considered use-case)
@@ -39,7 +36,7 @@ The layout relies strictly on the primary keys of a standard keyboard layout, re
 - Make variables use ergo-case: ~book--stephen-king---new~
 - Make functions use ergo-case: ~get--all-employees~
 
-*** Blasphemous but /judgingly/ accepted (by the author) use of sentence case hybrid (jk)
+*** Blasphemous but /judgingly/ accepted (by the author) use of sentence case hybrid (See conventions at bottom)
 - ~Stephen-King---Super-Stephen--Renegade.epub~
 - Program language where constants use capital-ergo like ~CONSTANT-NAME-EXAMPLE~
 
@@ -121,11 +118,11 @@ Because the system builds on repeating safe characters instead of introducing ob
 
 ** Lowercase Baseline
 
-All letters are typed lowercase as a primary system feature to maintain fluid, shift-free operation. This is an ergonomic priority rather than a hard machine limit.
+All letters are typed lowercase as a primary system feature to maintain fluid, shift-free operation. This is an ergonomic priority rather than a hard limit (see below).
 
 ** Stylistic Capitalization
 
-If an asset requires formal editorial presentation, sentence-style capitalization is fully permitted. Command-line tokenizers will continue to parse data cleanly based strictly on delimiter counts.
+Standard ergo-case is all lower case, but you can also choose to use capital letters freely without breaking my personal blessing. You will be judged by the auther of ergo-case (me) though, despite that they have no way to be omnipresent and knowledgable in your ways, and despite the fact that they (I) will definitely do it too occasionally. 
 
 ** Extension Boundary Rule
 
