@@ -46,7 +46,7 @@ Including a date in filenames is highly recommended for interoperability in the 
 
 ** Formatting rules
 
-Temporal values scale from broad to narrow. Standrd is jut YYYYMMDD
+Temporal values scale from broad to narrow. Standard is just using YYYYMMDD.
 - *Year:* Formatted as ~YYYY~. Always listed first if needed.
 - *Month:* Formatted as ~MM~. Always follows the year.
 - *Day:* Formatted as ~DD~. Always follows the month. Never used alone without a month.
@@ -63,7 +63,7 @@ Temporal values scale from broad to narrow. Standrd is jut YYYYMMDD
 - *Leading Position (Archive):* Placed at the very beginning of the title block. Best for permanent, immutable storage (like flat media vaults or journaling) where files must sort chronologically by default.
   ~20260202--indue-vault-diagram.png~
 
-- *No date:* For file sharing or presentation including a date can seem cluttered and ugly.
+- *No date:* For file sharing or presentation, including a date can seem cluttered and ugly.
   ~ergo-case---the-full-documentation~
 
 * ~ergo-taxo~: Adding hierachy information in filenames
