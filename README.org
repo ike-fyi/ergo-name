@@ -35,11 +35,11 @@ The layout relies strictly on the primary keys of a standard keyboard layout, re
 - ~national-terrorist-strike-force--san-diego---sport-utility-vehicle.mp4~
 - ~web-proposal--version-two---final-draft.pdf~
 
-*** Designing a neew programming or mark-up language
+*** Designing a new programming or mark-up language
 - Make variables use ergo-case: ~book--stephen-king---new~
 - Make functions use ergo-case: ~get--all-employees~
 
-** Blasphemous but /judgingly/ accepted (by the author) use of sentence case hybrid (jk)
+*** Blasphemous but /judgingly/ accepted (by the author) use of sentence case hybrid (jk)
 - ~Stephen-King---Super-Stephen--Renegade.epub~
 - Program language where constants use capital-ergo like ~CONSTANT-NAME-EXAMPLE~
 
