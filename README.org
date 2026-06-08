@@ -1,4 +1,4 @@
-#+TITLE: Ergo Neme Specification
+#+TITLE: Ergo-Name: Naming Specification
 #+AUTHOR: Isaac Ah-Loe
 #+DATE: [2026-06-08 Mon]
 #+OPTIONS: toc:2 num:t
