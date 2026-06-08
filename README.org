@@ -24,7 +24,7 @@ The layout relies strictly on the primary keys of a standard keyboard layout, re
 |-----------+-------------------------+--------------------+-------------------------------------------------|
 | ~-~       | Word Space              | Micro-distance     | Replaces the spaces                             |
 | ~--~      | Conceptual Break        | Medium-distance    | Acts like a comma/colon structural checkpoint   |
-| ~---~     | Deeper Conceptual Break | Long-distance      | Appends a trailing sub-thought or variant       |
+| ~---~     | Deeper Conceptual Break | Long-distance      | Can act liek dash when you already have a colon or vice versa, or just when it feels right |
 
 
 ** Basic ~ergo-case~ examples
