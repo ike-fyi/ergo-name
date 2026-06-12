@@ -3,13 +3,13 @@
 #+DATE: [2026-06-12 Fri]
 #+OPTIONS: toc:2 num:t
 
-* Overview
+* Overview: Like kebab-case but MOAR! (moar-case anyone??)
 
-morse-case is a naming convention — a word-separation style in the family of kebab-case and snake_case — designed around shift-free typing and semantic distance. Like its cousins, it uses "-case" in the programmer's loose sense of "identifier style" (kebab-case isn't actually about letter case either). And like its cousins, the name covers more than casing: morse-case is a full file-naming system, written entirely in dots and dashes.
+morse-case is a naming convention (a word-separation style in the family of kebab-case and snake_case) designed around shift-free typing and semantic distance. Like its cousins, it uses "-case" in the programmer's loose sense of "identifier style" (kebab-case isn't actually about letter case either). And like its cousins, the name covers more than casing: morse-case is a full file-naming system, written entirely in dots and dashes.
 
 It has a small core and two extensions:
 
-- *The core: the dash ladder.* Repeated dashes encode /semantic distance/ — the longer the gap, the bigger the conceptual leap. This is the portable piece; it can be used anywhere kebab-case would be.
+- *The core: the dash ladder.* Repeated dashes encode /semantic distance/: the longer the gap, the bigger the conceptual leap. This is the portable piece; it can be used anywhere kebab-case would be.
 - *Extension: structural tiers.* Dots mark tier boundaries, acting as virtual directories inside a flat folder.
 - *Extension: temporal signatures.* Self-identifying numeric timestamps for sorting and versioning.
 
@@ -17,7 +17,7 @@ Everything is typed without the Shift key. Lowercase letters, digits, ~-~, and ~
 
 * The core: the dash ladder
 
-A single ~-~ is a word space. Repeating the dash widens the gap, and the eye reads the wider gap as a bigger conceptual break — no counting required.
+A single ~-~ is a word space. Repeating the dash widens the gap, and the eye reads the wider gap as a bigger conceptual break. No counting required.
 
 | Separator | Name                    | Reads like                                  |
 |-----------+-------------------------+---------------------------------------------|
@@ -31,11 +31,11 @@ Four or more consecutive dashes are forbidden. Within the three rungs, usage is 
 italo-calvino---our-ancestors-02--the-baron-in-the-trees.epub
 #+END_EXAMPLE
 
-Here ~---~ separates the author from the work — a huge concept break — while ~--~ attaches the individual title to its series and number. Both breaks live inside one title; neither is hierarchy. Different degrees of distance are simply part of how a name is phrased.
+Here ~---~ separates the author from the work (a huge concept break), while ~--~ attaches the individual title to its series and number. Both breaks live inside one title; neither is hierarchy. Different degrees of distance are simply part of how a name is phrased.
 
 ** Expressive, not strict
 
-morse-case is a flexible, expressive system; it does not replace strict categorization standards, and the rungs encode /contrast/, not absolute levels. A ~---~ in one filename is not the same size of jump as a ~---~ in another. In the example above it marks a huge concept break, but a name with no huge break in it can still use both rungs the way a writer uses a colon and a dash together — two jumps of similar magnitude, marked differently to record that the breaks, even if equal in distance, /were/ different in kind:
+morse-case is a flexible, expressive system; it does not replace strict categorization standards, and the rungs encode /contrast/, not absolute levels. A ~---~ in one filename is not the same size of jump as a ~---~ in another. In the example above it marks a huge concept break, but a name with no huge break in it can still use both rungs the way a writer uses a colon and a dash together: two jumps of similar magnitude, marked differently to record that the breaks, even if equal in distance, /were/ different in kind:
 
 #+BEGIN_EXAMPLE
 field-recordings--marsh-birds---dawn-takes.flac
@@ -52,7 +52,7 @@ Neither jump dwarfs the other here: the ~--~ reads like a colon introducing the 
 
 ** Casing rules
 
-*Lowercase baseline.* All letters are lowercase as a primary system feature — this is what keeps typing shift-free, and it is the one true /casing/ rule in morse-case.
+*Lowercase baseline.* All letters are lowercase as a primary system feature. This is what keeps typing shift-free, and it is the one true /casing/ rule in morse-case.
 
 *Stylistic capitalization.* Capital letters may be used freely without breaking the convention's blessing. You will be judged by the author of morse-case (me), despite the author having no way to be omnipresent and knowledgeable in your ways, and despite the fact that the author will definitely do it too occasionally.
 
@@ -69,13 +69,13 @@ finance.2026.tax-records--q2-receipts.xlsx
 projects.tyke.gauntlet-emblem--v02--20260315.png
 #+END_EXAMPLE
 
-The single dot is the namespace character of computing — ~com.example.app~, Java packages, Python modules — and morse-case uses it in exactly that role. Dashes are how humans phrase things; dots are how systems address things. Because dots never touch dashes (see the guardrails below), every tier dot is flanked by word characters and reads like a domain name.
+The single dot is the namespace character of computing (~com.example.app~, Java packages, Python modules), and morse-case uses it in exactly that role. Dashes are how humans phrase things; dots are how systems address things. Because dots never touch dashes (see the guardrails below), every tier dot is flanked by word characters and reads like a domain name.
 
-Tiers are written in core morse-case, kept short, and used judiciously: nesting real directories is still the general recommendation. Tiers exist for the cases where files must live in a flat directory — media vaults, log dirs, exports, sync targets — and a hierarchy is still wanted.
+Tiers are written in core morse-case, kept short, and used judiciously: nesting real directories is still the general recommendation. Tiers exist for the cases where files must live in a flat directory (media vaults, log dirs, exports, sync targets) and a hierarchy is still wanted.
 
 ** Elastic dots
 
-A tier boundary is /one or more/ dots. The number of dots never changes meaning — ~.~ and ~..~ are the same boundary — and a single dot is the canonical form. Extra dots are purely visual emphasis, for the rare name where a heavier wall reads better:
+A tier boundary is /one or more/ dots. The number of dots never changes meaning: ~.~ and ~..~ are the same boundary. A single dot is the canonical form. Extra dots are purely visual emphasis, for the rare name where a heavier wall reads better:
 
 #+BEGIN_EXAMPLE
 cards..hallmark-essentials..happy-birthday-doggo.png
@@ -83,7 +83,7 @@ cards..hallmark-essentials..happy-birthday-doggo.png
 
 Two practical notes:
 
-- Some upload validators and security filters reject any filename containing ~..~ on a naive substring check (it resembles the path-traversal token). Use single dots for files that travel — uploads, email, other people's servers — and save multi-dot emphasis for environments you control.
+- Some upload validators and security filters reject any filename containing ~..~ on a naive substring check (it resembles the path-traversal token). Use single dots for files that travel (uploads, email, other people's servers) and save multi-dot emphasis for environments you control.
 - Because dot count is meaningless by definition, a pipeline that collapses ~..~ to ~.~ loses nothing. Degradation is lossless.
 
 Parsers treat any run of dots as a single boundary: split on ~/\.+/~.
@@ -92,29 +92,29 @@ Parsers treat any run of dots as a single boundary: split on ~/\.+/~.
 
 1. *Dots never touch a dash.* No ~.-~ or ~-.~ anywhere; every dot run is flanked by word characters.
 2. *Titles never contain dots.* Hierarchy is dots; prose is dashes; the extension is the final dot. This makes parsing deterministic.
-3. *No leading dot* (that's a Unix hidden file) and *the extension dot is always exactly one dot, preceded by a word character* — multi-dot elasticity never applies at the extension boundary.
+3. *No leading dot* (that's a Unix hidden file) and *the extension dot is always exactly one dot, preceded by a word character*: multi-dot elasticity never applies at the extension boundary.
 
 * Extension: temporal signatures
 
-Dates in filenames are recommended for archiving, versioning, and collaboration. morse-case uses concatenated ISO 8601 basic format, all digits, so temporal tokens are /self-identifying/ — an 8-digit token is unambiguously a date and needs no special delimiter beyond an ordinary ~--~ field break.
+Dates in filenames are recommended for archiving, versioning, and collaboration. morse-case uses concatenated ISO 8601 basic format, all digits, so temporal tokens are /self-identifying/: an 8-digit token is unambiguously a date and needs no special delimiter beyond an ordinary ~--~ field break.
 
 ** Format rules
 
-- *Date:* always ~YYYYMMDD~. Never ~YYMMDD~ — a 6-digit date is indistinguishable from a 6-digit ~hhmmss~ and stops sorting correctly across centuries.
+- *Date:* always ~YYYYMMDD~. Never ~YYMMDD~: a 6-digit date is indistinguishable from a 6-digit ~hhmmss~ and stops sorting correctly across centuries.
 - *Time:* appended directly to the date with a lowercase ~t~, ISO basic style: ~20260608t1246~. Seconds extend it: ~t124659~. The whole timestamp is one atomic token.
 - *Timezone:* ~z~ for UTC (~20260608t1246z~), or omit for local time. Numeric offsets are not used: ~+~ needs Shift and ~-~ collides with the word space.
-- *Versions:* ~v~ plus zero-padded digits — ~v02~, not ~v2~ — or ~v10~ sorts before ~v2~ and breaks self-sorting.
+- *Versions:* ~v~ plus zero-padded digits (~v02~, not ~v2~); otherwise ~v10~ sorts before ~v2~ and breaks self-sorting.
 
 ** Placement
 
-- *Trailing — versioned, living documents.* The date acts as version control:
+- *Trailing position, for versioned, living documents.* The date acts as version control:
   ~client-alpha-proposal--20260608.pdf~
   ~system-auth-log--20260608t1246z.log~
-- *Leading — chronological archives.* Files sort by time by default:
+- *Leading position, for chronological archives.* Files sort by time by default:
   ~20260202---indue-vault-diagram.png~
   ~photos.20260202t0930--at-the-beach.jpg~
-  (One leading timestamp inside a tier does both jobs at once: the file clusters under ~photos.~, sorts chronologically within it, and carries a version-grade timestamp — no need to write the date twice.)
-- *None — presentation and sharing.* When a date would be clutter:
+  (One leading timestamp inside a tier does both jobs at once: the file clusters under ~photos.~, sorts chronologically within it, and carries a version-grade timestamp, with no need to write the date twice.)
+- *No date, for presentation and sharing.* When a date would be clutter:
   ~morse-case---the-full-documentation.pdf~
 
 * Master syntax
@@ -133,11 +133,11 @@ projects.indue-markup.gauntlet-emblem--concept-art---approved--v02--20260315.png
 
 A morse-case filename decomposes deterministically:
 
-1. Split on ~/\.+/~ — the last token is the extension, the token containing the prose is the title block, everything before it is the tier path.
+1. Split on ~/\.+/~: the last token is the extension, the token containing the prose is the title block, everything before it is the tier path.
 2. Within the title block, split greedily, longest match first: ~---~, then ~--~, then ~-~.
 3. Any all-digit token (optionally with ~t~/~z~) is temporal metadata; ~v~ + digits is a version.
 
-Because the elastic parts of the system — which dash rung an author chooses, how many dots mark a wall — never change how a string tokenizes, scripts can always recover the structure they need.
+Because the elastic parts of the system (which dash rung an author chooses, how many dots mark a wall) never change how a string tokenizes, scripts can always recover the structure they need.
 
 ** Sorting
 
@@ -147,15 +147,15 @@ ASCII order works in the system's favor: ~-~ (45) sorts before ~.~ (46), which s
 - Within a name, ~---~ boundaries sort ahead of ~--~ boundaries ahead of plain words, so deeper breaks group first.
 - Leading ~YYYYMMDD~ timestamps sort chronologically by construction.
 
-(Note: mixing ~.~ and ~..~ for the /same/ tier wall across sibling files will split the cluster in a sort — emphasis dots, like capitalization, are best applied consistently within a folder.)
+(Note: mixing ~.~ and ~..~ for the /same/ tier wall across sibling files will split the cluster in a sort; emphasis dots, like capitalization, are best applied consistently within a folder.)
 
 ** Zero quoting
 
-No spaces, no shell metacharacters. Names can be piped, moved, globbed, and tab-completed without quotes in every major shell. (Typing a tier prefix and hitting Tab restricts completion to that tier — same prefix-matching every shell already does.)
+No spaces, no shell metacharacters. Names can be piped, moved, globbed, and tab-completed without quotes in every major shell. (Typing a tier prefix and hitting Tab restricts completion to that tier, the same prefix-matching every shell already does.)
 
 ** Graceful degradation on the web
 
-Slugifiers and CMS filename scrubbers treat runs of special characters as a single block, so ~---~ and ~--~ compress to a single ~-~, and tier dots typically become dashes. The name loses its distance information but stays readable and never gets mangled — morse-case acts like a pre-slugged string:
+CMS filename scrubbers treat runs of special characters as a single block, so ~---~ and ~--~ compress to a single ~-~, and tier dots typically become dashes. The name loses its distance information but stays readable and never gets mangled. morse-case acts like a pre-slugged string:
 
 - Local: ~category.title-text--metadata--20260608.ext~
 - Web-collapsed: ~category-title-text-metadata-20260608.ext~
@@ -166,7 +166,7 @@ Every degradation path is either lossless or loud (a renamed slug), never a sile
 
 morse-case is a restoration, not an invention. Separation length carrying meaning is how mark-making already works:
 
-- *Morse code.* Gap length /is/ the hierarchy: one unit of silence inside a letter, three between letters, seven between words. A dash is itself defined as three dots long. Meaning encoded as duration of mark and separation — the system's namesake and its mechanism.
+- *Morse code.* Gap length /is/ the hierarchy: one unit of silence inside a letter, three between letters, seven between words. A dash is itself defined as three dots long. Meaning is encoded as duration of mark and separation: the system's namesake and its mechanism.
 - *The typewriter dash ladder.* Typists wrote the hyphen, en dash, and em dash as ~-~, ~--~, and ~---~; TeX canonized the convention. Typography has always had three rungs of dash, with length encoding separation strength.
 - *Music notation.* The staccato mark is a dot (detached, short); the tenuto mark is a dash (held, connected). The exact two characters, already assigned meanings about separation versus connection.
 - *Linguistic juncture.* Pause length at a boundary changes meaning: "night rate" is not "nitrate," and "I scream" is not "ice cream." Identical sounds, different separation, different meaning.
