@@ -1,4 +1,4 @@
-#+TITLE: morse-case: A Shift-Free Naming Convention
+#+TITLE: morse--case: A Shift-Free Naming Convention
 #+AUTHOR: Isaac Ah-Loe
 #+DATE: [2026-06-12 Fri]
 #+OPTIONS: toc:2 num:t
